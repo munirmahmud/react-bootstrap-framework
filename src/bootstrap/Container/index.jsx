@@ -1,13 +1,16 @@
 import React from "react";
 import "./Container.styles.css";
 
-const Container = ({ children, sm = "", md = "", lg = "" }) => {
+const Container = ({ children, sm = "", md = "", lg = "", fullWidth = "" }) => {
   const containerSM = sm && "container-sm";
   const containerMD = md && "container-md";
   const containerLG = lg && "container-ld";
+  const fluidContainer = fullWidth && "container-fluid";
 
   return (
-    <div className={`${containerSM} ${containerMD} ${containerLG}`}>
+    <div
+      className={`${containerSM} ${containerMD} ${containerLG} ${fluidContainer}`}
+    >
       {children}
     </div>
   );

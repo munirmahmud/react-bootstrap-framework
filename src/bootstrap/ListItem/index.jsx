@@ -1,7 +1,7 @@
 import React from "react";
 
-function NavItem({ children, ...rest }) {
+function ListItem({ children, ...rest }) {
   return <li {...rest}>{children}</li>;
 }
 
-export default NavItem;
+export default ListItem;
