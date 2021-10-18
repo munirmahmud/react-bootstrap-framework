@@ -6,5 +6,16 @@ import Container from "./Container";
 import Layout from "./Layout";
 import Row from "./Row";
 import TextField from "./TextField";
+import ToolTip from "./Tooltip";
 
-export { Card, Cardbody, Container, Row, Col, Alert, Layout, TextField };
+export {
+  Card,
+  Cardbody,
+  Container,
+  Row,
+  Col,
+  Alert,
+  Layout,
+  TextField,
+  ToolTip,
+};
