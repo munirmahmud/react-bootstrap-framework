@@ -4,7 +4,7 @@ import "./Container.styles.css";
 const Container = ({ children, sm = "", md = "", lg = "", fullWidth = "" }) => {
   const containerSM = sm && "container-sm";
   const containerMD = md && "container-md";
-  const containerLG = lg && "container-ld";
+  const containerLG = lg && "container-lg";
   const fluidContainer = fullWidth && "container-fluid";
 
   return (
