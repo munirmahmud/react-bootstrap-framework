@@ -4,6 +4,7 @@ import Card from "./Card/CardWrapper";
 import Col from "./Col";
 import Container from "./Container";
 import Layout from "./Layout";
+import Loader from "./Loader";
 import Row from "./Row";
 import TextField from "./TextField";
 import ToolTip from "./Tooltip";
@@ -18,4 +19,5 @@ export {
   Layout,
   TextField,
   ToolTip,
+  Loader,
 };
