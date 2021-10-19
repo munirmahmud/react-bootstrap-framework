@@ -1,0 +1,22 @@
+@-webkit-keyframes spinnerBorder {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinnerBorder {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spinner-border {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: -0.125em;
+  border: 0.15em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: 0.75s linear infinite spinnerBorder;
+  animation: 0.75s linear infinite spinnerBorder;
+}

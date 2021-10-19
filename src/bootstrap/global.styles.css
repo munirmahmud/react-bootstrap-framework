@@ -339,6 +339,18 @@ body {
   --bs-text-opacity: 1;
 }
 
+.text-start {
+  text-align: left;
+}
+
+.text-end {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
 /* CLOSE BUTTON */
 .btn-close {
   box-sizing: content-box;

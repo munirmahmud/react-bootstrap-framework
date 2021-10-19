@@ -1,34 +1,11 @@
 import React from "react";
 import "./loader.styles.css";
-
-{
-  /* <div class="spinner-border text-primary" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>
-<div class="spinner-border text-secondary" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>
-<div class="spinner-border text-success" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>
-<div class="spinner-border text-danger" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>
-<div class="spinner-border text-warning" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>
-<div class="spinner-border text-info" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>
-<div class="spinner-border text-light" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>
-<div class="spinner-border text-dark" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div> */
-}
+import Spin from "./Spin";
+import SpinGrow from "./SpinGrow";
 
 const Loader = ({
+  className,
+  grow,
   primary,
   secondary,
   success,
@@ -38,6 +15,9 @@ const Loader = ({
   light,
   dark,
   border,
+  left,
+  center,
+  right,
   role,
   ...rest
 }) => {
@@ -69,16 +49,51 @@ const Loader = ({
       : "";
 
   const spnningRole = role ? role : "status";
+  const extraClassNames = className ? className : "";
 
-  return (
-    <div
-      className={`spinner-border ${borderSize} ${spinStyles}`}
-      role={spnningRole}
-      {...rest}
-    >
-      <span className="visually-hidden">Loading...</span>
-    </div>
-  );
+  const position = left
+    ? "text-start"
+    : center
+    ? "text-center"
+    : right
+    ? "text-end"
+    : "";
+
+  console.log("position", position);
+
+  const displaySpinner = () => {
+    if (grow) {
+      return (
+        <>
+          {position && <div className={position}>}
+            <SpinGrow
+              spinStyles={spinStyles}
+              borderSize={borderSize}
+              spnningRole={spnningRole}
+              className={extraClassNames}
+              {...rest}
+            />
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div className={position}>
+            <Spin
+              spinStyles={spinStyles}
+              borderSize={borderSize}
+              spnningRole={spnningRole}
+              className={extraClassNames}
+              {...rest}
+            />
+          </div>
+        </>
+      );
+    }
+  };
+
+  return displaySpinner();
 };
 
 export default Loader;
