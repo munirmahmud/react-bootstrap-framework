@@ -1,0 +1,17 @@
+.commonButton {
+  border: 0;
+  padding: 10px 20px;
+  background: #fb5013;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.IconImage {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
