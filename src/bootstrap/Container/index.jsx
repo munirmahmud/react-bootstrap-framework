@@ -3,6 +3,7 @@ import "./Container.styles.css";
 
 const Container = ({
   children,
+  className,
   sm = "",
   md = "",
   lg = "",
@@ -20,7 +21,10 @@ const Container = ({
     : "container";
 
   return (
-    <div className={`${containerClass}`} {...rest}>
+    <div
+      className={`${containerClass} ${className ? className : ""}`}
+      {...rest}
+    >
       {children}
     </div>
   );
