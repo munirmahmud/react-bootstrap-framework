@@ -1,9 +1,9 @@
-import Home from "./pages/Home";
+import Dropdown from "./bootstrap/Dropdown";
 
 function App() {
   return (
     <div>
-      <Home />
+      <Dropdown />
     </div>
   );
 }
