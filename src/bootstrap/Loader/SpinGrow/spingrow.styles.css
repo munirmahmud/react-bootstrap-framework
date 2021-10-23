@@ -29,6 +29,46 @@
   animation: 0.75s linear infinite spinnerGrow;
 }
 
+.spinner-grow.primary {
+  color: rgba(var(--bs-primary-rgb));
+}
+
+.spinner-grow.secondary {
+  color: rgba(var(--bs-secondary-rgb));
+}
+
+.spinner-grow.success {
+  color: rgba(var(--bs-success-rgb));
+}
+
+.spinner-grow.info {
+  color: rgba(var(--bs-info-rgb));
+}
+
+.spinner-grow.warning {
+  color: rgba(var(--bs-warning-rgb));
+}
+
+.spinner-grow.danger {
+  color: rgba(var(--bs-danger-rgb));
+}
+
+.spinner-grow.light {
+  color: rgb(221 221 221);
+}
+
+.spinner-grow.dark {
+  color: rgba(var(--bs-dark-rgb));
+}
+
+.spinner-grow.black {
+  color: rgba(var(--bs-black-rgb));
+}
+
+.spinner-grow.white {
+  color: rgba(var(--bs-white-rgb));
+}
+
 .spinner-grow-sm {
   width: 1rem;
   height: 1rem;
