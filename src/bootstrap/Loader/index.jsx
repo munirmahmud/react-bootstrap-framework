@@ -5,7 +5,7 @@ import SpinGrow from "./SpinGrow";
 
 const Loader = ({
   className,
-  grow,
+  type,
   primary,
   secondary,
   success,
@@ -62,10 +62,20 @@ const Loader = ({
   console.log("position", position);
 
   const displaySpinner = () => {
-    if (grow) {
+    if (type === "grow") {
       return (
         <>
-          {position && <div className={position}>}
+          {position ? (
+            <div className={position}>
+              <SpinGrow
+                spinStyles={spinStyles}
+                borderSize={borderSize}
+                spnningRole={spnningRole}
+                className={extraClassNames}
+                {...rest}
+              />
+            </div>
+          ) : (
             <SpinGrow
               spinStyles={spinStyles}
               borderSize={borderSize}
@@ -73,13 +83,23 @@ const Loader = ({
               className={extraClassNames}
               {...rest}
             />
-          </div>
+          )}
         </>
       );
     } else {
       return (
         <>
-          <div className={position}>
+          {position ? (
+            <div className={position}>
+              <Spin
+                spinStyles={spinStyles}
+                borderSize={borderSize}
+                spnningRole={spnningRole}
+                className={extraClassNames}
+                {...rest}
+              />
+            </div>
+          ) : (
             <Spin
               spinStyles={spinStyles}
               borderSize={borderSize}
@@ -87,7 +107,7 @@ const Loader = ({
               className={extraClassNames}
               {...rest}
             />
-          </div>
+          )}
         </>
       );
     }
