@@ -1,43 +1,42 @@
 import React from "react";
+import Grid from "./Grid";
 import "./loader.styles.css";
+import Roller from "./Roller";
 import Spin from "./Spin";
 import SpinGrow from "./SpinGrow";
+// import Roller from "./Roller";
 
 const Loader = ({
   className,
-  grow,
-  primary,
-  secondary,
-  success,
-  danger,
-  warning,
-  info,
-  light,
-  dark,
+  type,
+  color,
   border,
-  left,
-  center,
-  right,
+  position,
   role,
   ...rest
 }) => {
-  const spinStyles = primary
-    ? "primary"
-    : secondary
-    ? "secondary"
-    : success
-    ? "success"
-    : danger
-    ? "danger"
-    : warning
-    ? "warning"
-    : info
-    ? "info"
-    : light
-    ? "light"
-    : dark
-    ? "dark"
-    : "primary";
+  const spinStyles =
+    color === "primary"
+      ? "primary"
+      : color === "secondary"
+      ? "secondary"
+      : color === "success"
+      ? "success"
+      : color === "danger"
+      ? "danger"
+      : color === "warning"
+      ? "warning"
+      : color === "info"
+      ? "info"
+      : color === "light"
+      ? "light"
+      : color === "dark"
+      ? "dark"
+      : color === "black"
+      ? "black"
+      : color === "white"
+      ? "white"
+      : "primary";
 
   const borderSize =
     border === "sm"
@@ -51,44 +50,68 @@ const Loader = ({
   const spnningRole = role ? role : "status";
   const extraClassNames = className ? className : "";
 
-  const position = left
-    ? "text-start"
-    : center
-    ? "text-center"
-    : right
-    ? "text-end"
-    : "";
-
-  console.log("position", position);
+  const loaderPosition =
+    position === "left"
+      ? "text-start"
+      : position === "center"
+      ? "text-center"
+      : position === "right"
+      ? "text-end"
+      : "";
 
   const displaySpinner = () => {
-    if (grow) {
+    if (type === "grow") {
       return (
-        <>
-          {position && <div className={position}>}
-            <SpinGrow
-              spinStyles={spinStyles}
-              borderSize={borderSize}
-              spnningRole={spnningRole}
-              className={extraClassNames}
-              {...rest}
-            />
-          </div>
-        </>
+        <SpinGrow
+          spinStyles={spinStyles}
+          borderSize={borderSize}
+          spnningRole={spnningRole}
+          className={extraClassNames}
+          position={loaderPosition}
+          {...rest}
+        />
+      );
+    } else if (type === "roller") {
+      return (
+        <Roller
+          spinStyles={spinStyles}
+          borderSize={borderSize}
+          spnningRole={spnningRole}
+          className={extraClassNames}
+          position={loaderPosition}
+          {...rest}
+        />
+      );
+    } else if (type === "grid") {
+      return (
+        <Grid
+          spinStyles={spinStyles}
+          spnningRole={spnningRole}
+          className={extraClassNames}
+          position={loaderPosition}
+          {...rest}
+        />
+      );
+    } else if (type === "ripple") {
+      return (
+        <Grid
+          spinStyles={spinStyles}
+          spnningRole={spnningRole}
+          className={extraClassNames}
+          position={loaderPosition}
+          {...rest}
+        />
       );
     } else {
       return (
-        <>
-          <div className={position}>
-            <Spin
-              spinStyles={spinStyles}
-              borderSize={borderSize}
-              spnningRole={spnningRole}
-              className={extraClassNames}
-              {...rest}
-            />
-          </div>
-        </>
+        <Spin
+          spinStyles={spinStyles}
+          borderSize={borderSize}
+          spnningRole={spnningRole}
+          className={extraClassNames}
+          position={loaderPosition}
+          {...rest}
+        />
       );
     }
   };

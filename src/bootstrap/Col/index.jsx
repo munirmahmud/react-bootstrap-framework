@@ -13,21 +13,20 @@ const Col = (props) => {
     ...rest
   } = props;
 
-  const smColumn = sm && sm;
-  const mdColumn = md && md;
-  const lgColumn = lg && lg;
-  const xlColumn = xl && xl;
-  const xxlColumn = xxl && xxl;
+  const classes = xxl
+    ? `col-xxl-${xxl}`
+    : xl
+    ? `col-xl-${xl}`
+    : lg
+    ? `col-lg-${lg}`
+    : md
+    ? `col-md-${md}`
+    : sm
+    ? `col-sm-${sm}`
+    : "";
 
   return (
-    <div
-      className={`${smColumn && `col-sm-${smColumn}`} ${
-        mdColumn && `col-md-${mdColumn}`
-      } ${lgColumn && `col-lg-${lgColumn}`} ${
-        xlColumn && `col-xl-${xlColumn}`
-      } ${xxlColumn && `col-xxl-${xxlColumn}`} ${className && className}`}
-      {...rest}
-    >
+    <div className={`${classes} ${className ? className : ""}`} {...rest}>
       {children}
     </div>
   );

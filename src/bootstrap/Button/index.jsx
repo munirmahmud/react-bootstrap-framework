@@ -1,5 +1,5 @@
 import React from "react";
-import "./Button.styles.css";
+import "./button.styles.css";
 
 export const Button = ({
   type,
@@ -7,17 +7,17 @@ export const Button = ({
   className,
   spacing,
   icon,
-  text,
-  ...styles
+  children,
+  ...rest
 }) => {
   const btnType = type ? type : "submit";
   const btnClass = className ? `btn btn-${className}` : "";
 
   return (
     <>
-      <button type={btnType} className={`commonButton ${btnClass}`} {...styles}>
-        {icon && <img src={icon} alt="icon" className="IconImage" />}
-        {text}
+      <button type={btnType} className={btnClass} {...rest}>
+        {icon && <img src={icon} alt="icon" className="icon-img" />}
+        {children}
       </button>
     </>
   );
