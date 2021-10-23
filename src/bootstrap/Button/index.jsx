@@ -8,14 +8,14 @@ export const Button = ({
   spacing,
   icon,
   text,
-  ...styles
+  ...rest
 }) => {
   const btnType = type ? type : "submit";
   const btnClass = className ? `btn btn-${className}` : "";
 
   return (
     <>
-      <button type={btnType} className={`commonButton ${btnClass}`} {...styles}>
+      <button type={btnType} className={`commonButton ${btnClass}`} {...rest}>
         {icon && <img src={icon} alt="icon" className="IconImage" />}
         {text}
       </button>
