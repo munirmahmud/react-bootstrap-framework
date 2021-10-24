@@ -1,0 +1,10 @@
+.drawer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem 1rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f0f0f0;
+  gap: 8px;
+}

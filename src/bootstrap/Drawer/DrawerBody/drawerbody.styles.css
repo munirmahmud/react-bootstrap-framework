@@ -1,0 +1,8 @@
+.drawer-body {
+  flex-grow: 1;
+  padding: 1rem 1rem;
+  overflow-y: auto;
+}
+.drawer-body p {
+  margin-top: 0;
+}
