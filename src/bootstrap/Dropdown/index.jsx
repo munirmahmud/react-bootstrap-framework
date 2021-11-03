@@ -1,16 +1,16 @@
-import { React, useRef, useState } from "react";
+import { React, useEffect, useState } from "react";
 import "./Dropdown.styles.css";
 
 const Dropdown = ({ text, dropdownText }) => {
   const [show, setShow] = useState(false);
-  const modalRef = useRef();
-  console.log("test", modalRef.current);
 
-  const closeModal = (e) => {
-    if (modalRef.current === e.target) {
-      setShow(false);
-    }
-  };
+  useEffect(() => {
+    document.onclick = function (event) {
+      if (event.target.className !== "text" && show) {
+        setShow((prevState) => !prevState);
+      }
+    };
+  }, [show]);
 
   return (
     <button className="dropdown">
@@ -18,7 +18,7 @@ const Dropdown = ({ text, dropdownText }) => {
         Dropdown Link
       </div>
       {show && (
-        <ul className="dropDownMenu" ref={modalRef} onClick={closeModal}>
+        <ul className="dropDownMenu">
           <li className="dropDownMenuList">
             <a href="/" className="dropDownMenuListLink">
               test

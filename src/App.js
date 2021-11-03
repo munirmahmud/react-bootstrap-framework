@@ -1,13 +1,10 @@
-import Dropdown from "./bootstrap/Dropdown";
 import { Route, Switch } from "react-router";
-import About from "./pages/About";
-import Home from "./pages/Home";
+import Test from "./components/Test";
 
 function App() {
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/about" component={About} />
+      <Route exact path="/" component={Test} />
     </Switch>
   );
 }
