@@ -1,0 +1,33 @@
+.dropdown {
+  border: none;
+  padding: 0px;
+}
+.text {
+  background: #5c636a;
+  cursor: pointer;
+  color: white;
+  padding: 7px 10px;
+}
+.dropDownMenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid #eee;
+  background: white;
+}
+.dropDownMenuList {
+  padding: 5px 0px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.dropDownMenuList:hover {
+  background: grey;
+}
+.dropDownMenuListLink {
+  text-decoration: none;
+  transition: 0.3s;
+  color: black;
+}
+.dropDownMenuList:hover .dropDownMenuListLink {
+  color: white;
+}
